@@ -1,0 +1,303 @@
+<html>
+<head>
+	<title></title>
+	<!-- 1. Add latest jQuery and fancyBox files -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<link rel="stylesheet" href="src/css/core.css"/>
+<!-- <link rel="stylesheet" href="src/css/core.css"/> -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.css" /> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.1.25/jquery.fancybox.min.js"></script>
+
+
+
+</head>
+
+<style>
+.slide {
+
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.slide~.slide {
+  display: none;
+}
+
+.slide img {
+  max-height: 200px;
+}
+
+.slide-content {
+  display: none;
+  color: #AEACAB;
+}
+
+.slide-content h2 {
+  color: #333;
+}
+
+.slide-content h3 {
+  letter-spacing: 1.5px;
+  font-size: 14px;
+}
+
+.split-container .fancybox-inner {
+  width: 715px;
+  height: 500px;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: auto;
+  background: #fff;
+  opacity: 0;
+  transition: opacity .2s;
+  overflow: hidden;
+}
+
+.fancybox-is-open.split-container .fancybox-inner {
+  opacity: 1; 
+}
+
+.split-container .fancybox-stage {
+  width: 50%;
+}
+
+.split-container .slide-content {
+  display: block;
+  position: absolute;
+  top: 40px;
+  right: 0;
+  bottom: 40px;
+  width: 50%;
+  padding: 0 60px 0 40px;
+  overflow: auto;
+  box-sizing: border-box;
+  transform: translate3d(0, 0, 0);
+  transition-property: transform;
+}
+
+.fancybox-button--close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: #222;
+  background: transparent;
+}
+
+.fancybox-button--close:after, 
+.fancybox-button--close:before {
+  width: 22px;
+  height: 1.5px;
+  top: 20px;
+  left: 10px;
+}
+
+.fancybox-button--close:hover:not([disabled]) {
+  background: #eee;
+  color: #000;
+}
+
+.nav-arrows {
+  position: absolute;
+  top: 40%;
+  right: 22px;
+  width: 20px;
+  user-select: none;
+  z-index: 99996;
+}
+
+.nav-arrows svg {
+  fill: #666666;
+  width: 20px;
+  height: 30px;
+  cursor: pointer;
+}
+
+#arrow-up {
+  transform: rotate(180deg);
+}
+
+#arrow-down {
+  border-top: 1.5px solid #666;
+  padding-top: 4px;
+  margin-top: 4px;
+}
+
+/* Custom transition effect */
+
+.fancybox-fx-vertical.fancybox-slide--previous {
+  transform: translate3d(0,-100%, 0);
+}
+
+.fancybox-fx-vertical.fancybox-slide--next {
+  transform: translate3d(0, 100%, 0);
+}
+
+.fancybox-fx-vertical.fancybox-slide--current {
+  transform: translate3d(0, 0, 0);
+}
+
+
+</style>
+<body>
+<body>
+<nav>
+  <ul class="topbar">
+    <li><a href="single.html">single gallery</a></li>
+    <li><a href="gallery.html">multi gallery</a></li>
+    <li><a href="sidebyside.html">side by side</a></li>
+  </ul>
+</nav>
+
+
+<!-- this is cool, from codepen, but i don't understand it  -->
+<div class="gallery-wrapper">
+<h2>this is cool, from codepen, but i don't understand it</h2>
+<h2>fancyBox v3.1 - Custom layout, transition</h2>
+
+<div class="slide" data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/42764/slider1.jpg">
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/42764/slider1.jpg" alt="">
+  <div class="slide-content">
+    <h2>Hello! <br /> I’m Mr.Bara</h2>
+    <h3>FASHION DESIGNER</h3>
+    <p>
+      I combine the best of our skills and ideas to present you products really worth your attention that will change the way you think about design, structure, color and website itself.
+    </p>
+  </div>
+</div>
+
+<div class="slide" data-src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/42764/slide2.jpg">
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/42764/slide2.jpg" alt="">
+<div class="slide-content">
+    <h2>Love Simple <br /> Fashion</h2>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+    </p>
+  </div>
+</div>
+
+<div class="slide" data-src="https://st.mngbcn.com/rcs/pics/static/T6/fotos/S6/61087011_02_D1.jpg">
+  <img src="https://st.mngbcn.com/rcs/pics/static/T6/fotos/S6/61087011_02_D1.jpg" alt="">
+<div class="slide-content">
+    <h2>100% linen <br /> polo shirt</h2>
+    <p>
+      Item not available. Select a colour and a size and add it to your Wishlist. We will notify you by e-mail if it becomes available again.
+    </p>
+  </div>
+</div>
+
+<div class="slide" data-src="https://st.mngbcn.com/rcs/pics/static/T6/fotos/S6/61087011_02_B.jpg?ts=1458548842204">
+  <img src="https://st.mngbcn.com/rcs/pics/static/T6/fotos/S6/61087011_02_B.jpg?ts=1458548842204" alt="">
+<div class="slide-content">
+    <h2>Mr.Bara <br /> Best Choice</h2>
+    <ul>
+      <li>Casual line</li>
+      <li>Linen fabric</li></li>
+      <li>Classic collar</li>
+      <li>Placket with button closure</li>
+      <li>Short sleeve</li>
+    </ul>
+  </div>
+</div>
+
+<!-- <p style="float:left; padding: 20px;">
+  Quick example of customized layout and transition. Inspired by - <br /> <a target="_blank" href="https://dribbble.com/shots/2797559-Mr-bara-Split-Screen">https://dribbble.com/shots/2797559-Mr-bara-Split-Screen</a>
+</p> -->
+
+<svg id="icons" xmlns="http://www.w3.org/2000/svg">  
+<symbol id="icon-arrow" viewBox="0 0 476.213 476.213" >
+<polygon fill="inherit" points="347.5,324.393 253.353,418.541 253.353,0 223.353,0 223.353,419.033 128.713,324.393 107.5,345.607 
+	238.107,476.213 368.713,345.606 "/>
+</symbol>
+</svg>
+</div> 
+
+
+<script type="text/javascript">
+	$("[data-fancybox]").fancybox({
+		// Options will go here
+	});
+</script>
+
+
+
+<!--  SCRIPT FOR TOP BOTTOM GALLERY  -->
+<script>
+var $slides  = $('.slide');
+var duration = 600;
+
+$slides.on('click', function() {
+  
+  $.fancybox.open( $slides, {
+    type     : 'image',
+    index    : $slides.index( this ),
+    loop     : true,
+    margin   : 0,
+    arrows   : false,
+    infobar  : true,
+    idleTime : false,
+    touch    : false,
+    animationEffect    : "fade",
+    transitionEffect   : "vertical",
+    transitionDuration : duration,
+    baseTpl  : 
+    '<div class="fancybox-container split-container" role="dialog" tabindex="-1">' +
+	'<div class="fancybox-bg"></div>' +
+	'<div class="fancybox-inner">' +
+    '<button data-fancybox-close="" class="fancybox-button fancybox-button--close" title="Close"></button>' +
+		'<div class="nav-arrows">' +
+			'<svg id="arrow-up" data-fancybox-prev>' +
+				'<use xlink:href="#icon-arrow"></use>' +
+			'</svg>' +
+			'<svg id="arrow-down" data-fancybox-next>' +
+				'<use xlink:href="#icon-arrow"></use>' +
+			'</svg>' +
+    '</div>' +
+		'<div class="fancybox-stage"></div>' +
+	'</div>' +
+'</div>',
+    beforeShow : function(instance, current, firstRun) {
+      var direction = current.pos > instance.prevPos ? 'previous' : 'next';
+      var $previous = $('#slide-content-clone');
+      
+      if ( $previous.length ) {
+        $previous.removeAttr('id');
+        
+        $.fancybox.animate( $previous, 'fancybox-slide--' + ( direction === 'next' ? 'previous' : 'next' ) + ' fancybox-fx-vertical', duration, function() {
+          $previous.remove();
+        });
+      }
+      
+      var $cnt = current.opts.$orig.children().eq(1).clone().attr('id', 'slide-content-clone');
+      
+      $cnt.appendTo( instance.$refs.inner );
+
+      if ( !firstRun ) {
+        // Little trick to prevent fast navigation
+        instance.isSliding = true;
+
+        // Set initial position for description - 
+        $cnt.addClass('fancybox-fx-vertical fancybox-slide--' + direction);
+        
+        // Force redraw
+        $cnt[0].offsetHeight;
+
+        // Description will now animate to start point
+        $cnt.css('transition-duration', duration + 'ms').removeClass('fancybox-slide--' + direction);
+        
+        // Enable navigation after some delay
+        // (set duration to match animation speed)
+        setTimeout(function() {
+          instance.isSliding = false;
+        }, duration);
+      }
+    }
+    
+  });
+  
+ });
+</script>
+</body>
+</html>
