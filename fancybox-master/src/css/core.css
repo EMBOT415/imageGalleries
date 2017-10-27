@@ -67,7 +67,7 @@
 	left: 0;
 }
 
-@media (min-width:800px) {
+/*@media (min-width:800px) {
 	.fancybox-outer,
 	.fancybox-inner,
 	.fancybox-bg,
@@ -78,7 +78,7 @@
 		bottom: 10%;
 		left: 10%;
 	}
-}
+}*/
 .fancybox-outer {
 	overflow-y: auto;
 	-webkit-overflow-scrolling: touch;
@@ -100,7 +100,7 @@
 
 .fancybox-is-open .fancybox-bg {
 	background: #f9f9f9;
-	opacity:1;
+	opacity:.6;
 	transition-timing-function: cubic-bezier(.22,.61,.36,1);
 }
 
